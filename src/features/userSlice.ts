@@ -17,10 +17,10 @@ export const userSlice = createSlice({
     logout: (state) => {
       state.user = { uid: "", photoUrl: "", displayName: "" };
     },
-    updateUserProfile: (state, action: PayloadAction<USER>) => {
-      state.user.displayName = action.payload.displayName;
-      state.user.photoUrl = action.payload.photoUrl;
-    },
+    // updateUserProfile: (state, action: PayloadAction<USER>) => {
+    //   state.user.displayName = action.payload.displayName;
+    //   state.user.photoUrl = action.payload.photoUrl;
+    // },
   },
 });
 

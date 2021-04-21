@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateUserProfile } from "../features/userSlice";
+// import { updateUserProfile } from "../features/userSlice";
 import styles from "./Auth.module.css";
 import { auth, provider, storage } from "../firebase";
 
@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage:
-      "url(https://images.unsplash.com/photo-1581784368651-8916092072cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)",
+      "url(https://images.unsplash.com/photo-1604881991405-b273c7a4386a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1268&q=80)",
+
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -69,6 +70,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Auth: React.FC = () => {
   const classes = useStyles();
+
+  const signInGoogle = async () => {
+    await auth.signInWithPopup(provider).catch((err) => alert(err.message));
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -114,10 +119,20 @@ const Auth: React.FC = () => {
             >
               Sign In
             </Button>
+            <Button
+              onClick={signInGoogle}
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              SignIn with Google
+            </Button>
           </form>
         </div>
       </Grid>
     </Grid>
   );
+};
 
 export default Auth;
