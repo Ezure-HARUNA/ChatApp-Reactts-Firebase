@@ -205,7 +205,7 @@ const Auth: React.FC = () => {
                 //ログイン時と登録時での制御の切り替え
                 isLogin
                   ? !email || password.length < 6
-                  : !userName || !email password.length < 6 || !avatarImage
+                  : !userName || !email || password.length < 6 || !avatarImage
               }
               fullWidth
               variant="contained"
