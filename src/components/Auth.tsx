@@ -278,6 +278,7 @@ const Auth: React.FC = () => {
               </Grid>
             </Grid>
             <Button
+              startIcon={<CameraIcon/>}
               onClick={signInGoogle}
               fullWidth
               variant="contained"
