@@ -70,15 +70,50 @@ const ChatInput: React.FC = () => {
   };
 
     return (
-        <div>
-          <Avatar
-            className={styles.chat_avatar}
-            src={user.photoUrl}
-            onClick={async () => {
-              await auth.signOut();
-            }}
-          />
-        </div>
+      <>
+        <form onSubmit={sendChat}>
+          <div className={styles.chat_form}>
+            <Avatar
+              className={styles.chat_avatar}
+              src={user.photoUrl}
+              onClick={async () => {
+                await auth.signOut();
+              }}
+            />
+            <input
+              className={styles.chat_input}
+              placeholder="Send a message"
+              type="text"
+              autoFocus
+              value={chatMessage}
+              onChange={(e) => setChatMessage(e.target.value)}
+            />
+             <IconButton>
+              <label>
+                <AddAPhotoIcon
+                  className={
+                    chatImage ? styles.chat_addIconLoaded : styles.chat_addIcon
+                  }
+                />
+                <input
+                  className={styles.chat_hiddenIcon}
+                  type="file"
+                  onChange={onChangeImageHandler}
+                />
+              </label>
+            </IconButton>
+          </div>
+          <Button
+            type="submit"
+            disabled={!chatMessage && !chatImage}
+            className={
+              chatMessage ? styles.chat_sendBtn : styles.chat_sendDisableBtn
+            }
+          >
+            Send
+          </Button>
+        </form> 
+      </>
     )
 }
 
