@@ -18,51 +18,58 @@ const Feed: React.FC = () => {
 
   //!! 一旦配列を作って、reverseして、setPostしてみてください！
 
-   useEffect(() => {
-    const unSub = db
-      .collection("posts")
-      .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) =>
-        // setPosts(
-          snapshot.forEach(function(doc) {
-            posts.push({
-            id: doc.id,
-            avatar: doc.data().avatar,
-            image: doc.data().image,
-            text: doc.data().text,
-            timestamp: doc.data().timestamp,
-            username: doc.data().username,
-            })
-            
-          })
-        // )
-      );
-      const reverse = posts.reverse();
-      // console.log(reverse)
-      const set = setPosts(reverse)
-      console.log(posts)
-
-
-  // useEffect(() => {
+  //  useEffect(() => {
   //   const unSub = db
   //     .collection("posts")
   //     .orderBy("timestamp", "desc")
   //     .onSnapshot((snapshot) =>
-  //       setPosts(
-  //         snapshot.docs.map((doc) => ({
+  //       // setPosts(
+  //         snapshot.forEach(function(doc) {
+  //           posts.push({
   //           id: doc.id,
   //           avatar: doc.data().avatar,
   //           image: doc.data().image,
   //           text: doc.data().text,
   //           timestamp: doc.data().timestamp,
   //           username: doc.data().username,
-  //         }))
-  //       )
+  //           })
+            
+  //         })
+  //       // )
   //     );
+  //     // const reverse = setPosts(posts.reverse());
+  //     // // console.log(reverse)
+  //     // // const set = setPosts(reverse)
+  //     // console.log(posts)
+
+  //     setPosts(posts.reverse());
+  //     console.log(posts)
+
+
+  useEffect(() => {
+    const unSub = db
+      .collection("posts")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setPosts(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            avatar: doc.data().avatar,
+            image: doc.data().image,
+            text: doc.data().text,
+            timestamp: doc.data().timestamp,
+            username: doc.data().username,
+          }))
+        )
+      );
+      setPosts(posts.reverse());
+      console.log(posts)
     return () => {
       unSub();
     };
   }, []);
+
+  
 
      
       
