@@ -1,15 +1,19 @@
 .chat_form {
-  margin: 40px;
+  /* margin: 40px; */
   position: relative;
   display: flex;
+ 
 }
 .chat_avatar {
   cursor: pointer;
   margin-top: 2px;
+  position: fixed!important;
+  bottom: 10px;
+  left: 2.5%;
 }
 .chat_input {
   margin-left: 40px;
-  width: 90%;
+  width: 75%;
   background-color: #e1e1e1;
   padding: 15px;
   border-radius: 30px;
@@ -17,14 +21,25 @@
   border: none;
   color: #333333;
   font-size: 18px;
+  position: fixed;
+  bottom: 10px;
+  left: 5%;
 }
 .chat_addIcon {
   cursor: pointer;
-  color: white;
+  color: #008000;
+  position: fixed;
+  bottom: 15px;
+  left: 85%;
 }
 .chat_addIconLoaded {
   cursor: pointer;
-  color: dimgray;
+  color: #008000;
+  opacity: 0.5;
+  filter: brightness(10%); 
+  position: fixed!important;
+  bottom: 20px!important;
+  left: 85%!important;
 }
 .chat_hiddenIcon {
   display: none;
@@ -36,9 +51,12 @@
   font-weight: 800 !important;
   text-transform: inherit !important;
   border-radius: 20px !important;
-  width: 80px;
-  height: 40px !important;
+  width: 100px;
+  height: 47px !important;
   margin-left: 80% !important;
+  position: fixed!important;
+  bottom: 10px;
+  left: 9%;
 }
 .chat_sendDisableBtn {
   background-color: gray !important;
@@ -47,8 +65,11 @@
   font-weight: 900 !important;
   text-transform: inherit !important;
   border-radius: 30px !important;
-  width: 80px;
-  height: 40px !important;
+  width: 100px;
+  height: 47px !important;
   margin-left: 80% !important;
   cursor: none !important;
+  position: fixed!important;
+  bottom: 10px;
+  left: 9%;
 }
