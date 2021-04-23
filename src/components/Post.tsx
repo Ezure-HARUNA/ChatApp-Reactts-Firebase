@@ -91,7 +91,7 @@ const Post: React.FC<PROPS> = (props) => {
         <div>
           <div className={styles.post_header}>
             <h3>
-              <span className={styles.post_headerUser}>@{props.username}</span>
+              <span className={styles.post_headerUser}>{props.username}</span>
               <span className={styles.post_headerTime}>
                 {new Date(props.timestamp?.toDate()).toLocaleString()}
               </span>
@@ -118,7 +118,7 @@ const Post: React.FC<PROPS> = (props) => {
               <div key={com.id} className={styles.post_comment}>
                 <Avatar src={com.avatar} className={classes.small} />
 
-                <span className={styles.post_commentUser}>@{com.username}</span>
+                <span className={styles.post_commentUser}>{com.username}</span>
                 <span className={styles.post_commentText}>{com.text} </span>
                 <span className={styles.post_headerTime}>
                   {new Date(com.timestamp?.toDate()).toLocaleString()}
