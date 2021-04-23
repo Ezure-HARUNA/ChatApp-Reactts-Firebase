@@ -17,34 +17,35 @@
 .post_headerUser {
   font-weight: 600;
   font-size: 18px;
-  color: white;
+  color: gray;
   margin-right: 12px;
 }
 .post_headerTime {
   font-size: 14px;
   color: gray;
 }
-.post_tweet {
+.post_chat {
   margin-bottom: 10px;
   font-size: 15px;
 }
-.post_tweet > p {
-  color: whitesmoke;
-  font-size: 20px;
+.post_chat > p {
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
 }
-.post_tweetImage {
+.post_chatImage {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.post_tweetImage > img {
+.post_chatImage > img {
   object-fit: contain;
   border-radius: 20px;
   max-height: 250px;
 }
 .post_commentIcon {
   margin-top: 15px;
-  color: whitesmoke;
+  color: lightgray;
   cursor: pointer;
 }
 .post_comment {
@@ -56,13 +57,14 @@
 .post_commentUser {
   font-weight: 600;
   font-size: 16px;
-  color: white;
+  color: gray;
   margin-right: 12px;
 }
 .post_commentText {
   font-size: 15px;
-  color: whitesmoke;
+  color: black;
   margin-right: 10px;
+  font-weight: bold;
 }
 .post_form {
   margin: 40px;
@@ -75,13 +77,15 @@
   border: none;
   border-radius: 10px;
   margin-right: 10px;
+  background-color: #e1e1e1;
 }
 .post_button {
   border: none;
-  color: whitesmoke;
+  color: #008000;
   background-color: transparent;
   cursor: pointer;
 }
 .post_buttonDisable {
   display: none;
+  color: gray !important;
 }

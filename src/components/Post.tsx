@@ -97,13 +97,13 @@ const Post: React.FC<PROPS> = (props) => {
               </span>
             </h3>
           </div>
-          <div className={styles.post_tweet}>
+          <div className={styles.post_chat}>
             <p>{props.text}</p>
           </div>
         </div>
         {props.image && (
-          <div className={styles.post_tweetImage}>
-            <img src={props.image} alt="tweet" />
+          <div className={styles.post_chatImage}>
+            <img src={props.image} alt="chat" />
           </div>
         )}
 
